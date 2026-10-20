@@ -11,12 +11,12 @@ h1{font-size:clamp(34px,5vw,54px)}h2{font-size:30px}h3{font-size:22px;margin:0 0
 .top{position:sticky;top:0;z-index:5;background:rgba(253,251,247,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;font:600 26px Cormorant,serif;color:var(--ink);text-decoration:none}
-.brand img{border-radius:9px}
+.brand img{border-radius:0}
 nav{display:flex;gap:18px;flex-wrap:wrap;align-items:center}nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
 nav a:hover{color:var(--brand)}nav .lang{border:1px solid var(--line);border-radius:99px;padding:4px 12px}
 .hero{background:linear-gradient(180deg,var(--bg2),var(--bg));padding:48px 0 32px}
 .herow{display:flex;align-items:center;justify-content:space-between;gap:32px}.herow p{font-size:19px;color:var(--muted);max-width:620px}
-.herow img{width:200px;border-radius:44px;box-shadow:0 18px 40px rgba(26,24,21,.15)}
+.herow img{width:420px;max-width:45%;height:auto}
 .play{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;border-radius:99px;padding:12px 22px}
 .play:hover{background:var(--brand2)}.play.big{font-size:17px;padding:15px 28px;margin-top:8px}
 .feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin:24px auto 16px}
@@ -44,5 +44,5 @@ nav a:hover{color:var(--brand)}nav .lang{border:1px solid var(--line);border-rad
 .text{max-width:780px;padding-top:16px;padding-bottom:32px}.text h2{color:var(--brand2);font-size:24px;margin-top:28px}.mail{font-size:22px;font-weight:600}
 footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;font-size:14px;color:var(--muted)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.foot a{color:var(--muted)}.foot .play{color:#fff}
-@media(max-width:720px){.herow{flex-direction:column-reverse;align-items:flex-start}.herow img{width:120px;border-radius:28px}.cols{grid-template-columns:1fr}
+@media(max-width:720px){.herow{flex-direction:column-reverse;align-items:flex-start}.herow img{width:260px;max-width:80%}.cols{grid-template-columns:1fr}
 .grid{grid-template-columns:repeat(2,1fr);gap:14px}.card b{font-size:18px}nav{gap:12px}}
