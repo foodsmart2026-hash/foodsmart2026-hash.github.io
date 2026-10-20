@@ -1,0 +1,15 @@
+FOOD SMART - SITO PRONTO PER GITHUB PAGES (dominio www.food-smart.it)
+
+1. Carica TUTTI questi file nella cartella principale del repository (branch main).
+   index.html deve stare direttamente in primo piano.
+   (Il caricamento dal sito GitHub accetta max 100 file per volta: carica le cartelle
+   ricette, en, img in piu' passaggi, oppure usa GitHub Desktop.)
+2. Settings -> Pages -> Source: Deploy from a branch -> main / (root) -> Save.
+3. Settings -> Pages -> Custom domain: www.food-smart.it -> Save -> spunta "Enforce HTTPS".
+4. Dal pannello del tuo registrar del dominio aggiungi i DNS:
+   CNAME   www   ->  foodsmart2026-hash.github.io
+   A       @     ->  185.199.108.153
+   A       @     ->  185.199.109.153
+   A       @     ->  185.199.110.153
+   A       @     ->  185.199.111.153
+5. Attendi la propagazione DNS (da pochi minuti a 24 ore).
