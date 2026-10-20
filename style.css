@@ -46,3 +46,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;font-size
 .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.foot a{color:var(--muted)}.foot .play{color:#fff}
 @media(max-width:720px){.herow{flex-direction:column-reverse;align-items:flex-start}.herow img{width:260px;max-width:80%}.cols{grid-template-columns:1fr}
 .grid{grid-template-columns:repeat(2,1fr);gap:14px}.card b{font-size:18px}nav{gap:12px}}
+
+.ad{grid-column:1/-1;margin:8px 0}
+.play.alt{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}.play.alt:hover{background:var(--bg2)}
+.btns{display:flex;gap:10px;flex-wrap:wrap}.card img.noimg{object-fit:contain;padding:28px;box-sizing:border-box}
