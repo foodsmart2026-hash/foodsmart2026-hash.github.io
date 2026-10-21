@@ -6,7 +6,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8674164072928185" crossorigin="anonymous"></script></head><body>
 <header class="top"><div class="wrap bar"><a class="brand" href="index.html"><img src="logo.png" alt="" width="36" height="36">Food Smart</a>
 <nav><a href="index.html">Home</a><a href="ricette.html">Ricette</a><a href="community.html">Community</a><a href="contatti.html">Contatti</a><a class="lang" href="en-community-recipe.html">English</a></nav></div></header>
-<main><article class="wrap recipe" id="rec"><p class="count" id="msg">Caricamento…</p></article>
+<main><a id="dlh" href="app-in-arrivo.html" hidden></a><article class="wrap recipe" id="rec"><p class="count" id="msg">Caricamento…</p></article>
 <script>(function(){var API="https://foodsmart-app.emergent.host/api",id=new URLSearchParams(location.search).get("id"),R=document.getElementById("rec"),D={"Facile": "Facile", "Media": "Media", "Difficile": "Difficile"};
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
 if(!id){location.href="community.html";return;}
@@ -21,8 +21,8 @@ s1.appendChild(el("h2",null,"Ingredienti"));(d.ingredients||[]).forEach(function
 s2.appendChild(el("h2",null,"Procedimento"));(d.steps||[]).forEach(function(x){ol.appendChild(el("li",null,x));});s2.appendChild(ol);
 cols.appendChild(s1);cols.appendChild(s2);R.appendChild(cols);
 var cta=el("div","cta");cta.appendChild(el("p",null,"Apri la ricetta nell'app per la lista della spesa, le schede ingredienti e i negozi vicini."));var bt=el("div","btns"),o=el("a","play alt open-app","Apri nell'app");o.dataset.id=d.id;o.href="https://play.google.com/store/apps/details?id=com.emergent.foodsmartapp.l9zr2v";
-bt.appendChild(o);var pl=el("a","play","Scarica su Google Play");pl.href="https://play.google.com/store/apps/details?id=com.emergent.foodsmartapp.l9zr2v";bt.appendChild(pl);cta.appendChild(bt);R.appendChild(cta);if(window.fsOpen)window.fsOpen(o);
+bt.appendChild(o);var pl=el("a","play","Scarica su Google Play");pl.href=document.getElementById("dlh").href;bt.appendChild(pl);cta.appendChild(bt);R.appendChild(cta);if(window.fsOpen)window.fsOpen(o);
 }).catch(function(){document.getElementById("msg").textContent="Impossibile caricare le ricette ora. Riprova pi\u00f9 tardi.";});})();</script></main>
 <footer><div class="wrap foot"><div><b>Food Smart</b><br>© 2026 Food Smart. Tutti i diritti riservati.</div>
 <div><a href="privacy.html">Privacy</a> · <a href="termini.html">Termini</a> · <a href="contatti.html">Contatti</a></div>
-<a class="play" href="https://play.google.com/store/apps/details?id=com.emergent.foodsmartapp.l9zr2v" rel="noopener">Scarica su Google Play</a></div></footer><script>(function(){if(!/Android/i.test(navigator.userAgent))return;var fb=encodeURIComponent("https://play.google.com/store/apps/details?id=com.emergent.foodsmartapp.l9zr2v");window.fsOpen=function(a){a.href='intent://recipe/'+encodeURIComponent(a.dataset.id)+'#Intent;scheme=foodsmart;package=com.emergent.foodsmartapp.l9zr2v;S.browser_fallback_url='+fb+';end';};[].forEach.call(document.querySelectorAll('.open-app'),window.fsOpen);})();</script></body></html>
+<a class="play" href="app-in-arrivo.html">Scarica su Google Play</a></div></footer><script>(function(){if(!/Android/i.test(navigator.userAgent))return;var fb=encodeURIComponent("https://play.google.com/store/apps/details?id=com.emergent.foodsmartapp.l9zr2v");window.fsOpen=function(a){a.href='intent://recipe/'+encodeURIComponent(a.dataset.id)+'#Intent;scheme=foodsmart;package=com.emergent.foodsmartapp.l9zr2v;S.browser_fallback_url='+fb+';end';};[].forEach.call(document.querySelectorAll('.open-app'),window.fsOpen);})();</script></body></html>
