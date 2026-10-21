@@ -3,13 +3,16 @@
 <link rel="alternate" hreflang="it" href="https://www.food-smart.it/community-ricetta.html"><link rel="alternate" hreflang="en" href="https://www.food-smart.it/en-community-recipe.html">
 <meta property="og:title" content="Community recipes – Food Smart"><meta property="og:description" content="Recipes published by Food Smart users who chose to share them on the website too. They are not verified by our team."><meta property="og:type" content="website">
 <link rel="icon" href="favicon.png"><link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZD6MQK9TF"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-3ZD6MQK9TF');</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8674164072928185" crossorigin="anonymous"></script></head><body>
 <header class="top"><div class="wrap bar"><a class="brand" href="en.html"><img src="logo.png" alt="" width="36" height="36">Food Smart</a>
 <nav><a href="en.html">Home</a><a href="en-recipes.html">Recipes</a><a href="en-community.html">Community</a><a href="en-contact.html">Contact</a><a class="lang" href="community-ricetta.html">Italiano</a></nav></div></header>
-<main><a id="dlh" href="en-coming-soon.html" hidden></a><article class="wrap recipe" id="rec"><p class="count" id="msg">Loading…</p></article>
+<main><a id="dlh" href="en-coming-soon.html" hidden></a><a id="backh" href="en-community.html" hidden></a><article class="wrap recipe" id="rec"><p class="count" id="msg">Loading…</p></article>
 <script>(function(){var API="https://foodsmart-app.emergent.host/api",id=new URLSearchParams(location.search).get("id"),R=document.getElementById("rec"),D={"Facile": "Easy", "Media": "Medium", "Difficile": "Hard"};
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
-if(!id){location.href="en-community.html";return;}
+if(!id){location.href=document.getElementById("backh").href;return;}
 fetch(API+"/public/recipes/"+encodeURIComponent(id)+"?lang=en").then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
 R.innerHTML="";document.title=d.title+" – Food Smart";
 if(d.has_image){var im=el("img","hero-img");im.src=API+"/public/recipes/"+encodeURIComponent(d.id)+"/image";im.alt=d.title;R.appendChild(im);}
