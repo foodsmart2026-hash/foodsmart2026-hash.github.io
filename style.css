@@ -64,3 +64,7 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;font-size
 .soon-phone img{width:210px}.soon-phone b{color:#D8431F;font-size:19px;margin-top:-6px}
 @media(max-width:860px){.soon{padding:32px 0 40px}.soon-in{flex-direction:column;gap:32px}.soon h1{font-size:38px}.soon-logo{width:230px;margin-left:-10px}
 .soon-feat{grid-template-columns:1fr}.soon-phone{width:220px;height:420px;border-radius:40px}.soon-phone img{width:170px}.soon .btns .play{flex:1;text-align:center;padding-left:12px;padding-right:12px;font-size:15px;white-space:nowrap}}
+.notify{background:#fff;border:1px solid #F3DCCB;border-radius:20px;padding:20px;margin:20px 0}.notify h2{margin:0 0 4px;font-size:24px}.notify p{margin:0 0 12px}
+.nrow{display:flex;gap:10px;flex-wrap:wrap}.nrow input{flex:1;min-width:200px;font:inherit;padding:12px 16px;border:1px solid #E8D5C6;border-radius:999px;min-height:48px;box-sizing:border-box}
+.nrow .play{border:0;cursor:pointer;font:inherit;font-weight:600}.nc{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#6B5A55;margin-top:12px;cursor:pointer}.nc input{margin-top:3px;width:18px;height:18px;flex:none}
+.nmsg{margin:10px 0 0;font-weight:600}.nmsg.ok{color:var(--ok)}.nmsg.err{color:#B3261E}
