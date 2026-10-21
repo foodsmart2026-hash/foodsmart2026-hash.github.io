@@ -68,3 +68,12 @@ footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;font-size
 .nrow{display:flex;gap:10px;flex-wrap:wrap}.nrow input{flex:1;min-width:200px;font:inherit;padding:12px 16px;border:1px solid #E8D5C6;border-radius:999px;min-height:48px;box-sizing:border-box}
 .nrow .play{border:0;cursor:pointer;font:inherit;font-weight:600}.nc{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#6B5A55;margin-top:12px;cursor:pointer}.nc input{margin-top:3px;width:18px;height:18px;flex:none}
 .nmsg{margin:10px 0 0;font-weight:600}.nmsg.ok{color:var(--ok)}.nmsg.err{color:#B3261E}
+.th{display:flex;align-items:flex-start;gap:12px;justify-content:space-between}.fav{flex:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--brand);background:#fff;color:var(--brand);font-size:24px;cursor:pointer;margin-top:18px;line-height:1}.fav.on{background:var(--brand);color:#fff}
+.chips.sub{margin-top:-4px}.chips.sub button{font-size:13px;padding:6px 12px}.algf{margin:4px 0 12px}.algf summary{cursor:pointer;font-weight:600;padding:8px 0}
+button.alg{display:inline-flex;gap:6px;align-items:center}button.alg span{font-size:18px}button.alg.on{background:#B3261E;border-color:#B3261E;color:#fff;text-decoration:line-through}
+nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:flex;flex-direction:column;gap:10px;margin:12px 0}.accf input,.accf textarea,.accf select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:12px;min-height:46px;box-sizing:border-box;width:100%}
+.accf textarea{min-height:80px}.accf .play{border:0;cursor:pointer;font:inherit;font-weight:600;align-self:flex-start}.gbtn{cursor:pointer;font:inherit;font-weight:600}
+.erow{display:flex;gap:8px;align-items:flex-start}.erow input:first-child{flex:2}.erow textarea{flex:1}.erow3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.erow3 label{display:flex;flex-direction:column;gap:4px;font-size:14px}
+.linkbtn{background:none;border:0;color:var(--brand);font:inherit;font-weight:600;cursor:pointer;padding:8px;align-self:flex-start}.mycard{display:flex;flex-direction:column;gap:6px}.mybar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px}
+@media(max-width:600px){.erow3{grid-template-columns:1fr}}
+.accf input[type=checkbox]{width:18px;height:18px;min-height:0;padding:0;flex:none}.accf .nc{font-size:15px;color:var(--ink)}
