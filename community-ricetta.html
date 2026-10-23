@@ -16,13 +16,14 @@ gtag('js', new Date());gtag('config', 'G-3ZD6MQK9TF');</script>
 <main><a id="dlh" href="app-in-arrivo.html" hidden></a><a id="backh" href="community.html" hidden></a><article class="wrap recipe" id="rec"><p class="count" id="msg">Caricamento…</p></article>
 <script>(function(){var API="https://foodsmart-app.emergent.host/api",id=new URLSearchParams(location.search).get("id"),R=document.getElementById("rec"),D={"Facile": "Facile", "Media": "Media", "Difficile": "Difficile"};
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+function AV(e,d){if(!/^[a-z]+$/.test(d.author_avatar||""))return;var im=document.createElement("img");im.className="av";im.alt="";im.width=20;im.height=20;im.src="https://www.food-smart.it"+"/av-"+d.author_avatar+".webp";e.insertBefore(im,e.firstChild);}
 if(!id){location.href=document.getElementById("backh").href;return;}
 fetch(API+"/public/recipes/"+encodeURIComponent(id)+"?lang=it").then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
 R.innerHTML="";document.title=d.title+" – Food Smart";
 if(d.has_image){var im=el("img","hero-img");im.src=API+"/public/recipes/"+encodeURIComponent(d.id)+"/image";im.alt=d.title;R.appendChild(im);}
 var th=el("div","th");th.appendChild(el("h1",null,d.title));var fv=el("button","fav","♡");fv.type="button";fv.dataset.id=d.id;th.appendChild(fv);R.appendChild(th);if(window.fsFav)window.fsFav(R);else document.addEventListener("DOMContentLoaded",function(){window.fsFav&&window.fsFav(R);});
 R.appendChild(el("p","meta",[d.author_name?"di "+d.author_name:"",d.servings?d.servings+" porzioni":"",d.time_minutes?d.time_minutes+" min":"",D[d.difficulty]||d.difficulty||""].filter(Boolean).join(" · ")));
-if(d.author_name&&true){var pa=el("a",null,"👤 "+d.author_name);pa.href=document.getElementById("fs-l-prof").href+"?u="+encodeURIComponent(d.author_name);var pp=el("p","meta");pp.appendChild(pa);R.appendChild(pp);}
+if(d.author_name&&true){var pa=el("a",null,(d.author_avatar?"":"👤 ")+d.author_name);AV(pa,d);pa.href=document.getElementById("fs-l-prof").href+"?u="+encodeURIComponent(d.author_name);var pp=el("p","meta");pp.appendChild(pa);R.appendChild(pp);}
 if(d.description)R.appendChild(el("p","lead",d.description));
 var cols=el("div","cols"),s1=el("section"),s2=el("section"),ul=el("ul","ing"),ol=el("ol","steps");
 s1.appendChild(el("h2",null,"Ingredienti"));(d.ingredients||[]).forEach(function(x){var li=el("li");li.appendChild(el("span",null,x.name));li.appendChild(el("b",null,x.quantity||""));ul.appendChild(li);});s1.appendChild(ul);
