@@ -27,8 +27,9 @@ if(d.author_name&&false){var pa=el("a",null,(d.author_avatar?"":"👤 ")+d.autho
 if(d.description)R.appendChild(el("p","lead",d.description));
 var cols=el("div","cols"),s1=el("section"),s2=el("section"),ul=el("ul","ing"),ol=el("ol","steps");
 s1.appendChild(el("h2",null,"Ingredienti"));(d.ingredients||[]).forEach(function(x){var li=el("li");li.appendChild(el("span",null,x.name));li.appendChild(el("b",null,x.quantity||""));ul.appendChild(li);});s1.appendChild(ul);
-s2.appendChild(el("h2",null,"Procedimento"));(d.steps||[]).forEach(function(x,i){if(i==2){s2.appendChild(ol);var ad=el("div","ad ad-step");ad.innerHTML="<ins class=\"adsbygoogle\" style=\"display:block; text-align:center;\" data-ad-layout=\"in-article\" data-ad-format=\"fluid\" data-ad-client=\"ca-pub-8674164072928185\" data-ad-slot=\"1705292818\"></ins>";s2.appendChild(ad);try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}ol=el("ol","steps");ol.start=3;}ol.appendChild(el("li",null,x));});s2.appendChild(ol);
-cols.appendChild(s1);cols.appendChild(s2);R.appendChild(cols);
+var ad=el("div","ad ad-step");ad.innerHTML="<ins class=\"adsbygoogle\" style=\"display:block; text-align:center;\" data-ad-layout=\"in-article\" data-ad-format=\"fluid\" data-ad-client=\"ca-pub-8674164072928185\" data-ad-slot=\"1705292818\"></ins>";s1.appendChild(ad);
+s2.appendChild(el("h2",null,"Procedimento"));(d.steps||[]).forEach(function(x){ol.appendChild(el("li",null,x));});s2.appendChild(ol);
+cols.appendChild(s1);cols.appendChild(s2);R.appendChild(cols);try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}
 var cta=el("div","cta");cta.appendChild(el("p",null,"Apri la ricetta nell'app per la lista della spesa, le schede ingredienti e i negozi vicini."));var bt=el("div","btns"),o=el("a","play alt open-app","Apri nell'app");o.dataset.id=d.id;o.href="https://play.google.com/store/apps/details?id=com.emergent.foodsmartapp.l9zr2v";
 bt.appendChild(o);var pl=el("a","play","Scarica su Google Play");pl.href=document.getElementById("dlh").href;bt.appendChild(pl);cta.appendChild(bt);R.appendChild(cta);if(window.fsOpen)window.fsOpen(o);
 }).catch(function(){document.getElementById("msg").textContent="Impossibile caricare le ricette ora. Riprova pi\u00f9 tardi.";});})();</script></main>
