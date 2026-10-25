@@ -34,7 +34,7 @@ nav a:hover{color:var(--brand)}nav .lang{border:1px solid var(--line);border-rad
 .count{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .recipe{max-width:900px;padding-top:24px}.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px}
 .meta{color:var(--muted)}.lead{font-size:19px}
-.cols{display:grid;grid-template-columns:1fr 1.4fr;gap:32px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px}.cols>section{min-width:0}
 .ing{list-style:none;padding:0;margin:0}.ing li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:8px 0}
 .ing b{white-space:nowrap;font-weight:600}.steps li{margin:0 0 12px}
 .nut{border-collapse:collapse;width:100%;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -44,10 +44,10 @@ nav a:hover{color:var(--brand)}nav .lang{border:1px solid var(--line);border-rad
 .text{max-width:780px;padding-top:16px;padding-bottom:32px}.text h2{color:var(--brand2);font-size:24px;margin-top:28px}.mail{font-size:22px;font-weight:600}
 footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;font-size:14px;color:var(--muted)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.foot a{color:var(--muted)}.foot .play{color:#fff}
-@media(max-width:720px){.herow{flex-direction:column-reverse;align-items:flex-start}.herow img{width:260px;max-width:80%}.cols{grid-template-columns:1fr}
+@media(max-width:720px){.herow{flex-direction:column-reverse;align-items:flex-start}.herow img{width:260px;max-width:80%}.cols{grid-template-columns:minmax(0,1fr)}
 .grid{grid-template-columns:repeat(2,1fr);gap:14px}.card b{font-size:18px}nav{gap:12px}}
 
-.ad{grid-column:1/-1;margin:8px 0}
+.ad{grid-column:1/-1;margin:8px 0;max-width:100%;overflow:hidden}.ad ins{max-width:100%}
 .play.alt{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}.play.alt:hover{background:var(--bg2)}
 .btns{display:flex;gap:10px;flex-wrap:wrap}.card img.noimg{object-fit:contain;padding:28px;box-sizing:border-box}
 .soon{position:relative;overflow:hidden;background:#FFF6EE;color:#3A2622;padding:56px 0 64px;border-top:8px solid #E8532A}
