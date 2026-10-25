@@ -14,15 +14,16 @@ gtag('js', new Date());gtag('config', 'G-3ZD6MQK9TF');</script>
 <header class="top"><div class="wrap bar"><a class="brand" href="index.html"><img src="logo.png" alt="" width="36" height="36">Food Smart</a>
 <nav><a href="index.html">Home</a><a href="ricette.html">Ricette</a><a href="community.html">Community</a><a href="contatti.html">Contatti</a><a id="fs-nav" class="accl" href="account.html">Accedi</a><a class="lang" href="en-community.html">English</a></nav></div></header>
 <main><section class="wrap"><h1>Ricette della community</h1><p class="lead">Le ricette pubblicate dagli utenti di Food Smart che hanno scelto di condividerle anche sul sito. Non sono verificate dalla redazione.</p><p class="count" id="count">Caricamento…</p>
-<div class="grid" id="grid"></div></section>
+<div class="chips" id="tps" role="group" aria-label="Tipologia di piatto"><button data-t="" class="on">Tutte le tipologie</button><button data-t="antipasti">Antipasti</button><button data-t="primi">Primi piatti</button><button data-t="secondi">Secondi</button><button data-t="contorni">Contorni</button><button data-t="dolci">Dolci</button><button data-t="piatti_unici">Piatti unici</button></div><div class="grid" id="grid"></div></section>
 <script>(function(){var g=document.getElementById("grid"),c=document.getElementById("count"),API="https://foodsmart-app.emergent.host/api";
 function AV(e,d){if(!/^[a-z]+$/.test(d.author_avatar||""))return;var im=document.createElement("img");im.className="av";im.alt="";im.width=20;im.height=20;im.src="https://www.food-smart.it"+"/av-"+d.author_avatar+".webp";e.insertBefore(im,e.firstChild);}
 fetch(API+"/public/recipes?lang=it").then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(list){
 c.textContent=list.length?"{n} ricette".replace("{n}",list.length):"Ancora nessuna ricetta della community. Pubblica la tua dall'app!";
-list.forEach(function(d){var a=document.createElement("a");a.className="card";a.href="community-ricetta.html?id="+encodeURIComponent(d.id);
+list.forEach(function(d){var a=document.createElement("a");a.className="card";a.dataset.t=d.dish_type||"";a.href="community-ricetta.html?id="+encodeURIComponent(d.id);
 var i=document.createElement("img");i.loading="lazy";i.alt=d.title;i.src=d.has_image?API+"/public/recipes/"+encodeURIComponent(d.id)+"/image":"https://www.food-smart.it/logo.png";if(!d.has_image)i.className="noimg";
 var m=document.createElement("span");m.className="ct";m.textContent=[d.author_name?"di "+d.author_name:"",d.time_minutes?d.time_minutes+" min":""].filter(Boolean).join(" · ");AV(m,d);
 var b=document.createElement("b");b.textContent=d.title;a.appendChild(i);a.appendChild(m);a.appendChild(b);g.appendChild(a);});
+if(list.length){var tpl="{n} ricette",RUN=function(){var n=0;[].forEach.call(g.children,function(e){var ok=!tp||e.dataset.t===tp;e.style.display=ok?"":"none";if(ok)n++;});c.textContent=tpl.replace("{n}",n);};var tp="",tb=[].slice.call(document.querySelectorAll("#tps button"));tb.forEach(function(b){b.onclick=function(){tp=b.dataset.t;tb.forEach(function(x){x.className=x===b?"on":"";});RUN();};});}
 }).catch(function(){c.textContent="Impossibile caricare le ricette ora. Riprova pi\u00f9 tardi.";});})();</script></main>
 <footer><div class="wrap foot"><div><b>Food Smart</b><br>© 2026 Food Smart. Tutti i diritti riservati.</div>
 <div><a href="privacy.html">Privacy</a> · <a href="termini.html">Termini</a> · <a href="contatti.html">Contatti</a> · <a href="#" onclick="if(window.googlefc&&googlefc.showRevocationMessage){googlefc.showRevocationMessage();}return false;">Preferenze cookie</a></div>
