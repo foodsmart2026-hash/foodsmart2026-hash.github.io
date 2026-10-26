@@ -81,3 +81,7 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 .copyr{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:#6B5A55}.copyr p{margin:0 0 8px}
 
 .av,.card img.av{width:20px;height:20px;aspect-ratio:1/1;border-radius:50%;padding:0;background:none;vertical-align:middle;margin-right:5px;display:inline-block}
+.crumbs{font-size:14px;color:var(--muted);margin:8px 0 12px}.crumbs a{color:var(--muted)}
+.intro{font-size:17px;line-height:1.6}.more-txt ul{padding-left:20px}.more-txt li{margin:0 0 8px}
+.related{margin-top:32px}.related .grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+@media(max-width:700px){.related .grid{grid-template-columns:repeat(2,1fr)}}
