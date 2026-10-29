@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.png"><meta name="robots" content="noindex"><title>Food Smart – Elimina account / Delete account</title>
+<style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#1A1815;background:#FDFBF7;line-height:1.6}
+h1{font-size:26px}h2{font-size:18px;color:#B3503B;margin-top:28px}input,button{font:inherit;padding:12px;border-radius:10px;border:1px solid #ccc;width:100%;box-sizing:border-box;margin:6px 0}
+button{background:#C45A44;color:#fff;border:0;font-weight:600}#msg{font-weight:600;margin-top:12px}</style></head><body>
+<h1>Elimina il tuo account Food Smart<br><small>Delete your Food Smart account</small></h1>
+<p><b>Dall'app:</b> Profilo → Elimina account. <b>From the app:</b> Profile → Delete account.</p>
+<p>Verranno cancellati definitivamente profilo, ricette pubblicate e relative foto, preferiti, lista della spesa e sessioni. Non conserviamo copie.<br>
+<i>Your profile, published recipes and their photos, favourites, shopping list and sessions will be permanently deleted. No copies are kept.</i></p>
+<h2>Richiesta dal web / Request from the web</h2>
+<p>Account con email e password: inserisci la password per eliminare subito. Account Google o Apple: lascia vuota la password, la richiesta verrà elaborata entro 30 giorni.<br>
+<i>Email &amp; password accounts: enter your password to delete immediately. Google or Apple accounts: leave the password empty; the request is processed within 30 days.</i></p>
+<form id="f"><input id="e" type="email" placeholder="Email" required><input id="p" type="password" placeholder="Password (facoltativa / optional)">
+<button>Elimina account / Delete account</button></form><div id="msg"></div><p>Oppure scrivi a / Or write to <a href="mailto:supporto@food-smart.it">supporto@food-smart.it</a> dall'indirizzo email del tuo account / from your account e-mail address.</p>
+<script>
+document.getElementById('f').onsubmit=async(ev)=>{ev.preventDefault();const m=document.getElementById('msg');try{
+const r=await fetch("https://foodsmart-app.emergent.host/api/account-deletion",{method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({email:document.getElementById('e').value,password:document.getElementById('p').value||null})});
+const d=await r.json().catch(()=>({}));
+m.textContent=r.ok?(d.status==='deleted'?'Account eliminato / Account deleted':'Richiesta registrata / Request received'):(d.detail||'Errore / Error');}catch(e){m.innerHTML='Scrivi a / Write to <a href="mailto:supporto@food-smart.it">supporto@food-smart.it</a>';}};
+</script></body></html>
