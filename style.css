@@ -101,3 +101,5 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 .article figure{margin:22px 0}.article figure img{width:100%;border-radius:16px}.article figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .art-body h2{font:600 28px/1.2 Cormorant,Georgia,serif;margin:30px 0 8px}.art-body p,.art-body li{font-size:18px;line-height:1.75}
 @media(max-width:700px){.article h1{font-size:34px}.grid.arts{grid-template-columns:1fr}}
+
+.seas{display:block;margin:6px 0 0;color:var(--ok);font-size:14px;font-weight:500}.seas[hidden]{display:none}
