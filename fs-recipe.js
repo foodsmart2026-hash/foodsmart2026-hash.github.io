@@ -63,7 +63,7 @@
       ul.parentNode.insertBefore(box, ul);
     }
     var row = el("p", "share"); row.appendChild(wa);
-    var meta = root.querySelector(".lead") || root.querySelector(".meta");
+    var meta = root.querySelector(":scope > .tags") || root.querySelector(".lead") || root.querySelector(".meta");
     if (meta) meta.parentNode.insertBefore(row, meta.nextSibling); else root.appendChild(row);
     update();
   };
