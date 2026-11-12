@@ -143,3 +143,10 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 .chips.tgs button{font-size:13px}
 .summary{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:4px 18px;margin:16px 0}
 .gp{display:inline-flex;align-items:center;line-height:0;border-radius:10px}.gp img{height:50px;width:auto;display:block}.gp.big img{height:62px}.gp:focus-visible{outline:3px solid var(--brand);outline-offset:3px}.btns .gp{align-self:center}
+.herow .gp img{width:auto;max-width:none;height:50px}.herow .gp.big img{height:62px}.hero-c{font-size:17px;line-height:1.5}.hero-c b{color:var(--brand)}
+.shots{display:flex;align-items:center;justify-content:center;flex:none}
+.shots .ph{display:block;line-height:0;box-sizing:border-box;border:7px solid #3A2622;border-radius:30px;overflow:hidden;background:#fff;box-shadow:0 18px 44px rgba(58,38,34,.18)}
+.shots .ph img{width:100%;height:auto;max-width:none;display:block}
+.shots .home{width:210px;position:relative;z-index:2}.shots .recipe,.shots .ranking{width:170px;opacity:.97}
+.shots .recipe{margin-right:-34px;transform:rotate(-6deg)}.shots .ranking{margin-left:-34px;transform:rotate(6deg)}
+@media(max-width:720px){.herow.apph{flex-direction:column;align-items:stretch}.shots{margin-top:12px}.shots .home{width:150px}.shots .recipe,.shots .ranking{width:118px}.shots .recipe{margin-right:-26px}.shots .ranking{margin-left:-26px}.shots .ph{border-width:5px;border-radius:22px}}
