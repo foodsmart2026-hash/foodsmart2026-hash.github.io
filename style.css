@@ -141,3 +141,5 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 .tag-salva_euro{background:var(--brand);color:#fff;border-color:var(--brand)}.tag-italiana{background:#FBE9E4;color:var(--brand2);border-color:#FBE9E4}
 .recipe>.tags{margin:10px 0 14px}.recipe>.tags .tag{font-size:13px;padding:4px 12px}
 .chips.tgs button{font-size:13px}
+.summary{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:4px 18px;margin:16px 0}
+.gp{display:inline-flex;align-items:center;line-height:0;border-radius:10px}.gp img{height:50px;width:auto;display:block}.gp.big img{height:62px}.gp:focus-visible{outline:3px solid var(--brand);outline-offset:3px}.btns .gp{align-self:center}
