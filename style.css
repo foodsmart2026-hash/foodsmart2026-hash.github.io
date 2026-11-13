@@ -150,3 +150,5 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 .shots .home{width:210px;position:relative;z-index:2}.shots .recipe,.shots .ranking{width:170px;opacity:.97}
 .shots .recipe{margin-right:-34px;transform:rotate(-6deg)}.shots .ranking{margin-left:-34px;transform:rotate(6deg)}
 @media(max-width:720px){.herow.apph{flex-direction:column;align-items:stretch}.shots{margin-top:12px}.shots .home{width:150px}.shots .recipe,.shots .ranking{width:118px}.shots .recipe{margin-right:-26px}.shots .ranking{margin-left:-26px}.shots .ph{border-width:5px;border-radius:22px}}
+
+.base-link{display:inline-block;margin-top:4px;font-size:.85em;font-weight:600;color:#3C6E4F;text-decoration:none}.base-link:hover{text-decoration:underline}
