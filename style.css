@@ -34,7 +34,7 @@ nav a:hover{color:var(--brand)}nav .lang{border:1px solid var(--line);border-rad
 .meta{color:var(--muted)}.lead{font-size:19px}
 .cols{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;max-width:820px;margin:0 auto}.cols>section{min-width:0}
 .ing{list-style:none;padding:0;margin:0}.ing li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:8px 0}
-.ing b{white-space:nowrap;font-weight:600}.steps li{margin:0 0 12px}
+.ing b{white-space:nowrap;font-weight:600}.ing li.ing-h{border:0;padding:16px 0 2px;font-weight:700;color:var(--brand,#C45A44)}.ing li.ing-h:first-child{padding-top:0}.step-h{font-size:1.05rem;margin:18px 0 8px;color:var(--brand,#C45A44)}.steps li{margin:0 0 12px}
 .nut{border-collapse:collapse;width:100%;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .nut th,.nut td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line)}.nut th{background:var(--bg2)}
 .note{color:var(--muted);font-size:14px}
@@ -152,6 +152,7 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 @media(max-width:720px){.herow.apph{flex-direction:column;align-items:stretch}.shots{margin-top:12px}.shots .home{width:150px}.shots .recipe,.shots .ranking{width:118px}.shots .recipe{margin-right:-26px}.shots .ranking{margin-left:-26px}.shots .ph{border-width:5px;border-radius:22px}}
 
 .base-link{display:inline-block;margin-top:4px;font-size:.85em;font-weight:600;color:#3C6E4F;text-decoration:none}.base-link:hover{text-decoration:underline}
+.art-body p a,.art-body li a{color:#C45A44;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 
 /* temporary section «Il Natale di Food Smart» (fs-occasion.js) */
 #fso-banner{margin-top:20px}.xmas{position:relative;display:flex;align-items:flex-end;min-height:190px;border-radius:20px;overflow:hidden;text-decoration:none;color:#fff;background:linear-gradient(135deg,#8B2C24,#8A3D2D);background-size:cover;background-position:center;transition:background-image .6s}

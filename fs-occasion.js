@@ -166,12 +166,16 @@
         if (d.has_image) { var hi = rimg(d); hi.className = "hero-img"; add(art, hi); }
         add(art, el("span", "occ-k", [T.course[d.course], d.region].filter(Boolean).join(" · ")), el("h1", null, d.title),
           el("p", "meta", [d.servings ? d.servings + " " + T.serv : null, d.time_minutes ? d.time_minutes + " min" : null].concat(d.diets.map(function (k) { return T.diet[k]; })).filter(Boolean).join(" · ")));
-        if (d.description) add(art, el("p", "lead", d.description));
-        if (d.story) add(art, add(el("section", "occ-story"), el("h2", null, T.story), el("p", null, d.story)));
+        // *_html: text formatted in the admin panel, already escaped and turned into safe HTML by the server
+        if (d.description) { var ld = put(art, el("p", "lead", d.description)); if (d.description_html) ld.innerHTML = d.description_html; }
+        if (d.story) { var st = put(art, add(el("section", "occ-story"), el("h2", null, T.story))); if (d.story_html) st.insertAdjacentHTML("beforeend", d.story_html); else add(st, el("p", null, d.story)); }
         var cols = el("div", "cols"), s1 = el("section"), s2 = el("section"), ul = el("ul", "ing"), ol = el("ol", "steps");
-        (d.ingredients || []).forEach(function (x) { add(ul, add(el("li"), el("span", null, x.name), el("b", null, x.quantity || ""))); });
-        (d.steps || []).forEach(function (x) { add(ol, el("li", null, x)); });
-        add(art, add(cols, add(s1, el("h2", null, T.ing), ul), add(s2, el("h2", null, T.steps), ol)));
+        function secAt(list, n) { for (var i = 0; i < (list || []).length; i++) if (list[i].at === n) return list[i].title; return null; }
+        (d.ingredients || []).forEach(function (x, n) { var hd = secAt(d.ing_sections, n); if (hd) add(ul, add(el("li", "ing-h"), el("span", null, hd))); add(ul, add(el("li"), el("span", null, x.name), el("b", null, x.quantity || ""))); });
+        add(s2, el("h2", null, T.steps), ol);
+        (d.steps || []).forEach(function (x, n) { var hd = secAt(d.step_sections, n); if (hd) { ol = el("ol", "steps"); ol.start = n + 1; add(s2, el("h3", "step-h", hd), ol); }
+          var li = put(ol, el("li", null, x)); if (d.steps_html && d.steps_html[n]) li.innerHTML = d.steps_html[n]; });
+        add(art, add(cols, add(s1, el("h2", null, T.ing), ul), s2));
         if (d.allergens) add(art, el("p", "note", T.alg + ": " + (d.allergens.length ? d.allergens.map(function (k) { return T.algL[k] || k; }).join(", ") : T.noalg) +
           (d.allergens_possible.length ? " · " + T.algp + ": " + d.allergens_possible.map(function (k) { return T.algL[k] || k; }).join(", ") : "")));
         var dl = el("a", "play", T.get); dl.href = O.dl; dl.rel = "noopener";
