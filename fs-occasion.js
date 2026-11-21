@@ -17,7 +17,7 @@
     course: { antipasto: "Antipasto", primo: "Primo", secondo: "Secondo", contorno: "Contorno", dolce: "Dolce" },
     moment: { vigilia: "Cena della Vigilia", pranzo: "Pranzo di Natale" },
     diet: { vegetariano: "Vegetariano", vegano: "Vegano", senza_glutine: "Senza glutine", senza_lattosio: "Senza lattosio" },
-    ing: "Ingredienti", steps: "Preparazione", story: "La tradizione", serv: "persone", alg: "Allergeni", algp: "Può contenere", noalg: "Nessuno dei 14 allergeni",
+    ing: "Ingredienti", steps: "Preparazione", story: "La tradizione", pair: "In abbinamento", alt: "In alternativa", serv: "persone", alg: "Allergeni", algp: "Può contenere", noalg: "Nessuno dei 14 allergeni",
     app: "Dosi modificabili, valori nutrizionali, lista della spesa e preferiti: apri la ricetta nell'app Food Smart.", get: "Scarica l'app",
     persons: "Persone", budget: "Budget per il cibo (€)", occ: "Occasione", any: "Qualsiasi", where: "Provenienza", italy: "Tutta Italia", mix: "Completa con altre regioni se manca un piatto adatto",
     courses: "Portate (almeno tre)", prefs: "Preferenze alimentari", allergies: "Allergie e intolleranze", exclude: "Escludi ingredienti (separati da virgola)", style: "Stile", time: "Tempo di preparazione",
@@ -45,7 +45,7 @@
     course: { antipasto: "Starter", primo: "First course", secondo: "Main course", contorno: "Side dish", dolce: "Dessert" },
     moment: { vigilia: "Christmas Eve dinner", pranzo: "Christmas lunch" },
     diet: { vegetariano: "Vegetarian", vegano: "Vegan", senza_glutine: "Gluten-free", senza_lattosio: "Lactose-free" },
-    ing: "Ingredients", steps: "Method", story: "The tradition", serv: "servings", alg: "Allergens", algp: "May contain", noalg: "None of the 14 allergens",
+    ing: "Ingredients", steps: "Method", story: "The tradition", pair: "Pairing", alt: "Alternatively", serv: "servings", alg: "Allergens", algp: "May contain", noalg: "None of the 14 allergens",
     app: "Adjustable servings, nutrition, shopping list and favourites: open the recipe in the Food Smart app.", get: "Get the app",
     persons: "Guests", budget: "Food budget (€)", occ: "Occasion", any: "Any", where: "Origin", italy: "All of Italy", mix: "Complete with other regions when a suitable dish is missing",
     courses: "Courses (at least three)", prefs: "Dietary preferences", allergies: "Allergies and intolerances", exclude: "Exclude ingredients (comma separated)", style: "Style", time: "Preparation time",
@@ -176,6 +176,14 @@
         (d.steps || []).forEach(function (x, n) { var hd = secAt(d.step_sections, n); if (hd) { ol = el("ol", "steps"); ol.start = n + 1; add(s2, el("h3", "step-h", hd), ol); }
           var li = put(ol, el("li", null, x)); if (d.steps_html && d.steps_html[n]) li.innerHTML = d.steps_html[n]; });
         add(art, add(cols, add(s1, el("h2", null, T.ing), ul), s2));
+        if (d.pairing && d.pairing.rows.length) {
+          var pr = add(art, add(el("section", "occ-story"), el("h2", null, T.pair)));
+          d.pairing.rows.forEach(function (x) {
+            add(pr, add(el("p"), el("strong", null, (x.kind === "soft" ? "🥤 " : "🍷 ") + (x.kind === "alternative" ? T.alt + ": " : "") + x.name + (x.region ? " · " + x.region : "")),
+              document.createTextNode(x.reason ? " — " + x.reason : "")));
+          });
+          if (d.pairing.note) add(pr, el("p", "note", d.pairing.note));
+        }
         if (d.allergens) add(art, el("p", "note", T.alg + ": " + (d.allergens.length ? d.allergens.map(function (k) { return T.algL[k] || k; }).join(", ") : T.noalg) +
           (d.allergens_possible.length ? " · " + T.algp + ": " + d.allergens_possible.map(function (k) { return T.algL[k] || k; }).join(", ") : "")));
         var dl = el("a", "play", T.get); dl.href = O.dl; dl.rel = "noopener";
