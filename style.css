@@ -170,3 +170,4 @@ nav .accl{font-weight:700;color:var(--brand)}.acc{max-width:760px}.accf{display:
 .occ-drink{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line);padding-top:8px;font-size:14px;color:var(--muted)}.occ-drink b{color:var(--ink);font-size:15px}
 .occ-box summary{font-weight:600;cursor:pointer}.occ-box ol{margin:4px 0 8px;padding-left:20px}.occ-in{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:12px;min-height:46px}
 @media(max-width:600px){.xmas .tree{font-size:64px;right:14px}.xmas-t b{font-size:23px}}
+.steps li .step-img{display:block;width:100%;max-width:560px;height:auto;border-radius:12px;margin:10px 0 4px}
